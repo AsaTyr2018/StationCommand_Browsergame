@@ -34,3 +34,7 @@ The default page now displays a simple overlay layout built with Tailwind CSS:
 - `src/Modules/` &mdash; Place for game modules. An example module is provided.
 
 The framework follows a service-oriented MVC style where each domain (agent) encapsulates its logic and communicates via defined interfaces.
+
+### Resource Management
+
+A simple `ResourceModule` demonstrates how agents can manage game state. Each tick triggers a mining expedition that may return iron, titan, silica, copper, h2o, ice/water or uran/deuterium. Results are shown in the top bar of the UI.
