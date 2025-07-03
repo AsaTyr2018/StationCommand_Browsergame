@@ -18,6 +18,15 @@ This repository contains the initial framework for **Station Command**, a browse
    ```
 3. Open `http://localhost:8000` in your browser.
 
+## User Interface
+
+The default page now displays a simple overlay layout built with Tailwind CSS:
+
+- Top bar shows resources and finances.
+- Left sidebar lists station modules.
+- The center area provides a station overview.
+- Right sidebar contains defense and security information.
+
 ## Project Structure
 
 - `public/` &mdash; Entry point of the application.
