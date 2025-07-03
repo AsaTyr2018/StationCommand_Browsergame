@@ -5,6 +5,7 @@
 **Overview:**
 
 *Station Command* places the player in the role of the commander of a deep-space orbital station, situated at the edge of known civilization. As the station's supreme authority, the player must manage critical aspects of station operations, balancing economic growth, defense, and expansion in a hostile and resource-scarce sector of space.
+Theme, Style and Lore follows the lead of Babylon 5.
 
 **Core Responsibilities:**
 
