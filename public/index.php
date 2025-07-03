@@ -3,13 +3,17 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use StationCommand\Core\Kernel;
 use StationCommand\Modules\ExampleModule\ExampleAgent;
+use StationCommand\Modules\ResourceModule\ResourceAgent;
 
 $kernel = new Kernel();
+$resourceAgent = new ResourceAgent();
+$kernel->registerAgent($resourceAgent);
 $kernel->registerAgent(new ExampleAgent());
 
 ob_start();
 $kernel->runTick();
 $tickOutput = ob_get_clean();
+$resources = $resourceAgent->getResources();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +26,11 @@ $tickOutput = ob_get_clean();
 <div id="overlay" class="min-h-screen flex flex-col">
     <header class="bg-gray-800 p-4">
         <div class="container mx-auto flex justify-between">
-            <div>Resources: <span id="resources">0</span></div>
+            <div>
+                <?php foreach ($resources as $name => $amount): ?>
+                    <span class="mr-2"><?= htmlspecialchars($name) ?>: <?= htmlspecialchars((string)$amount) ?></span>
+                <?php endforeach; ?>
+            </div>
             <div>Finances: <span id="finances">0</span></div>
         </div>
     </header>
